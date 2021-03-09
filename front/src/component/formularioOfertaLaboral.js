@@ -21,7 +21,8 @@ handleChange(event) {
     this.setState({[event.target.name] : event.target.value});
   }
 enviar(){
-this.props.recibirOfertas(this.state)
+console.log(this.state)
+this.props.callback(this.state)
 
 }
 
@@ -31,19 +32,20 @@ return(
                 <Form onSubmit={this.enviar}>
                   <Form.Group>
                      <Form.Label>Ingrese la descripcion del puesto.</Form.Label>
-                     <Form.Control as="textarea" rows={8} onChange={this.handleChange}/>
+                     <Form.Control as="textarea" rows={8} name="descripcion"onChange={this.handleChange}/>
                      </Form.Group>
                    <Form.Group controlId="date" bsSize="large">
                             <Form.Label> Fecha de inicio </Form.Label>
-                            <Form.Control type="date" onChange={this.handleChange}
+                            <Form.Control type="date" name="fechaInicio"onChange={this.handleChange}
                             />
                           </Form.Group>
                           <Form.Group controlId="date" bsSize="large">
                                                       <Form.Label> Fin de la convocatoria</Form.Label>
                                                       <Form.Control
-                                                        type="date" onChange={this.handleChange}
+                                                        type="date" name="fechaFinalizacion" onChange={this.handleChange}
                                                       />
                                                     </Form.Group>
+                                                    <Button onClick={this.enviar} variant="primary">Guardar oferta</Button>
                 </Form>
         </div>
 )

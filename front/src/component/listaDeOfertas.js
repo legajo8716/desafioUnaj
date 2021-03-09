@@ -42,9 +42,10 @@ render(){
                       {
  this.state.lista.map((oferta)=>
                                 <tr>
+                                  <td>{oferta.numero}</td>
                                   <td>{oferta.descripcion}</td>
-                                  <td colSpan="2">oferta.fechaInicio</td>
-                                  <td>oferta.fechaFinalizacion</td>
+                                  <td >{oferta.fechaInicio}</td>
+                                  <td>{oferta.fechaFinalizacion}</td>
                                 </tr>
                                 )
                       }

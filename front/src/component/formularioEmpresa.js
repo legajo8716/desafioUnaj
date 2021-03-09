@@ -20,7 +20,8 @@ provincias:[],
 provinciaSeleccionada:"",
 localidades:[],
 ofertasLaborales:[],
-insertar:false
+insertar:false,
+cantidadDeOfertas:0
 }
 
 }
@@ -78,10 +79,12 @@ this.setState({insertar:condicion})
         }
 
       recibirOferta(oferta){
- const list=Object.assign(this.state.ofertasLaborales,{"descripcion" : oferta.descripcion,
+ const list=Object.assign(this.state.ofertasLaborales,{[this.state.cantidadDeOfertas +1]:{"numero":this.state.cantidadDeOfertas,"descripcion" : oferta.descripcion,
                                                         "fechaInicio":oferta.fechaInicio,
-                                                        "fechaFinalizacion":oferta.fechaFinalizacion})
-    this.setState({ofertasLaborales:list});
+                                                        "fechaFinalizacion":oferta.fechaFinalizacion,
+                                                         }})
+    this.setState({ofertasLaborales:list,cantidadDeOfertas:this.state.cantidadDeOfertas+1,"insertar":false});
+    console.log(this.state.ofertasLaborales)
 
 
       }
@@ -140,9 +143,9 @@ this.setState({insertar:condicion})
                                             Agregar oferta
                                          </Button>
 
-
-                                         <ListaOfertas lista={this.state.ofertasLaborales}/>
-
+                                           <div style={{marginTop:"10px"}}>
+                                         <ListaOfertas  lista={this.state.ofertasLaborales}  />
+                                            </div>
 
                                          <Modal size="lg" show={this.state.insertar}>
                                         <Modal.Dialog style={{width:"100%",height:"100%"}} >
@@ -158,7 +161,7 @@ this.setState({insertar:condicion})
 
                                           <Modal.Footer>
                                             <Button variant="secondary"  onClick={() => this.agregarOferta(false)} >Cerrar</Button>
-                                            <Button variant="primary">Guardar oferta</Button>
+
                                           </Modal.Footer>
                                         </Modal.Dialog>
                                         </Modal>
