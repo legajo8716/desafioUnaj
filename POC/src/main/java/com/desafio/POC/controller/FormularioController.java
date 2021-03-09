@@ -19,8 +19,8 @@ public class FormularioController {
     @CrossOrigin
     @RequestMapping(method = {RequestMethod.POST}, value = {"/formulario"})
     @ResponseBody
-    public Formulario ingresoAlumno( @RequestBody Formulario formulario) {
-        formularioService.ingresoDeFormulario(formulario);
+    public Formulario ingresoAlumno( @RequestBody FormularioAlumno formulario) {
+        formularioService.ingresoDeFormularioAlumo(formulario);
         return formulario;
     }
 

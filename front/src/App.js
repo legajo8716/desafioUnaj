@@ -5,6 +5,10 @@ import FormularioAlumno from './component/formularioAlumno';
 import FormularioEmpresa from './component/formularioEmpresa';
 import AprobacionSolicitudes from './component/aprobacionSolicitudes';
 import ListaOfertas from './component/listaDeOfertas';
+import Login from './view/login';
+import Register from './view/register';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './view/home';
 
@@ -15,9 +19,17 @@ import Popper from 'popper.js';
 function App() {
   var data=[{descripcion:"pillo",fechaInicio:"hoy",fechaFinalizacion:"mañana"}]
   return (
-    <div >
-     <FormularioEmpresa/>
-    </div>
+    <BrowserRouter>
+     <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/formularioAlumno" component={FormularioAlumno} />
+          <Route path="/formularioEmpresa" component={FormularioEmpresa} />
+          <Route path="/registro" component={Register} />
+          <Route path="/login" component={Login} />
+
+
+        </Switch>
+        </BrowserRouter>
   );
 }
 

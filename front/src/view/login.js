@@ -1,0 +1,52 @@
+import React from 'react'
+import{Form,Button,Col,Navbar,Nav,FormControl,Card,CardGroup} from 'react-bootstrap'
+
+export default class Login extends React.Component{
+constructor(props){
+    super(props);
+    this.registrarte=this.registrarte.bind(this)
+
+}
+registrarte(){
+        this.props.history.push("/registro")
+
+}
+
+render(){
+    return (
+    <div>
+        <Form>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+          <Form.Group controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Check me out" />
+          </Form.Group>
+          <>
+            <Button variant="primary" size="lg" block onClick={this.registrarte}>
+                Registrate
+            </Button>
+            <Button variant="secondary" size="lg" block>
+              Iniciar sesion
+            </Button>
+          </>
+        </Form>
+    </div>
+
+    )
+
+
+}
+
+
+
+}
