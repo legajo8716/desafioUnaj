@@ -28,6 +28,8 @@ render(){ return(
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#features">Ofertas Laborales</Nav.Link>
               <Nav.Link href="#pricing">Encuentre personal</Nav.Link>
+              <Nav.Link href="#pricing">Contacto</Nav.Link>
+
             </Nav>
 
           </Navbar>
@@ -51,42 +53,37 @@ render(){ return(
               <Card className="card">
                 <Card.Img variant="top" src={empresa} className="images"/>
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title>¿Tu empresa necesita pesonal?</Card.Title>
                   <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
+                       En esta seccion usted podra inscribir a su empresa y ofreces todos los puestos a cubrir de la misma.
+                       Esta es una forma facil de conseguir personal calificado para todas sus labores y hacer crecer su empresa.
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
+
               </Card>
               <Card className="card">
                 <Card.Img variant="top" src={estudiante}  className="images"/>
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title>¿Sos estudiante y necesitas trabajo?</Card.Title>
                   <Card.Text>
-                    This card has supporting text below as a natural lead-in to additional
-                    content.{' '}
+                    La forma mas facil de ingresar a la industria. ¿Estas dispuesto a recibir la oferta de tu vida?.
+                    ¡Inscribite!
+
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
+
               </Card>
               <Card className="card">
                 <Card.Img variant="top" src={laboral} className="images"/>
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title>Personal Administrativo</Card.Title>
                   <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This card has even longer content than the first to
-                    show that equal height action.
+                    Todas las inscripciones son finamente seleccionadas, nuestro personal aprueban o rechazan las inscripciones, para ofrecer los mejores empleadores y empleados.
+
+
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
+
               </Card>
             </CardGroup>
                <Card >

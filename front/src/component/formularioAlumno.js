@@ -1,25 +1,57 @@
 import React from 'react'
 import{Form,Button,Col} from 'react-bootstrap'
+import axios from 'axios';
+
 
 
 
 
 export default class FormularioAlumno extends React.Component
 {
+constructor(props){
+    super(props);
+    this.handleChange=this.handleChange.bind(this)
+        this.handleSubmit=this.handleSubmit.bind(this)
+
+    }
+ handleChange(event) {
+    this.setState({[event.target.name] : event.target.value});
+  }
+   handleSubmit (e) {
+
+             console.log("envie")
+
+         e.preventDefault()
+
+
+             const header={
+                 'Content-Type': 'application/json',
+                 'X-Requested-With': 'XMLHttpRequest'
+             }
+
+         axios.post('http://localhost:8080/formularioAlumno',
+                     this.state,header)
+             .then(response =>alert("usuario creado con exito")).catch(error=>{alert("Usuario incorrecto")});
+          alert("sumir")
+         }
+
+
+
+
     render() {
     return(<div>
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                             <Form.Label>Nombre</Form.Label>
-                            <Form.Control type="email" placeholder="ingrese su nombre" />
+                            <Form.Control name="nombre"  placeholder="ingrese su nombre" onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                             <Form.Label>Apellido</Form.Label>
-                            <Form.Control type="email" placeholder="ingrese su apellido" />
+                            <Form.Control name="apellido" placeholder="ingrese su apellido" onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Label>Seleccionar tipo de Documento</Form.Label>
-                        <Form.Control as="select">
+                        <Form.Control name="tipoDni" as="select" onChange={this.handleChange} >
                           <option></option>
 
                           <option>DNI</option>
@@ -30,25 +62,25 @@ export default class FormularioAlumno extends React.Component
                       </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                                     <Form.Label>Numero de documento</Form.Label>
-                                    <Form.Control type="email" placeholder="ingrese su DNI" />
+                                    <Form.Control name="dni"  placeholder="ingrese su DNI" onChange={this.handleChange} />
                      </Form.Group>
 
                    <Form.Group controlId="formBasicEmail">
                      <Form.Label>Email </Form.Label>
-                     <Form.Control type="email" placeholder="Ingrese su email" />
+                     <Form.Control type="email" name="email" placeholder="Ingrese su email" onChange={this.handleChange} />
 
                    </Form.Group>
                    <Form.Group controlId="formBasicEmail">
                                    <Form.Label>Carrera</Form.Label>
-                                   <Form.Control type="email" placeholder="ingrese su carrera" />
+                                   <Form.Control name="carrera" placeholder="ingrese su carrera"  onChange={this.handleChange} />
                            </Form.Group>
                       <Form.Group controlId="formBasicEmail">
                                      <Form.Label>Año de ingreso</Form.Label>
-                                     <Form.Control type="email" placeholder="ingrese el año que comenzo su carrera" />
+                                     <Form.Control name="año" placeholder="ingrese el año que comenzo su carrera" onChange={this.handleChange}  />
                     </Form.Group>
                      <Form.Group>
                      <Form.Label>Ingrese su experiencia laboral.</Form.Label>
-                     <Form.Control as="textarea" rows={8} />
+                     <Form.Control name="experiencia" as="textarea" rows={8} onChange={this.handleChange}  />
                      </Form.Group>
 
                    <Button variant="primary" type="submit">

@@ -11,10 +11,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public interface FormularioRepository<T extends Formulario> extends CrudRepository<T, Long> {
-    ArrayList<Formulario>findAllByTipo(String tipo);
+    List<Formulario> findAllByTipo(String tipo);
     void save(FormularioEmpresa formularioEmpresa);
     void save(FormularioAlumno formularioEmpresa);
 

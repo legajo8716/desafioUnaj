@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FormularioAlumno from './component/formularioAlumno';
 import FormularioEmpresa from './component/formularioEmpresa';
 import AprobacionSolicitudes from './component/aprobacionSolicitudes';
+import SolicitudesAlumnos from './component/solicitudesAlumnos';
+
 import ListaOfertas from './component/listaDeOfertas';
 import Login from './view/login';
 import Register from './view/register';
@@ -26,6 +28,9 @@ function App() {
           <Route path="/formularioEmpresa" component={FormularioEmpresa} />
           <Route path="/registro" component={Register} />
           <Route path="/login" component={Login} />
+           <Route path="/lista" component={ListaOfertas } lista={data} />
+           <Route path="/solicitudesAlumnos" component={SolicitudesAlumnos }  />
+
 
 
         </Switch>

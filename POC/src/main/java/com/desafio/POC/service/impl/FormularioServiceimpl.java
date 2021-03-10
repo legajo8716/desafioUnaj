@@ -4,6 +4,7 @@ import com.desafio.POC.model.formulario.Formulario;
 import com.desafio.POC.model.formulario.FormularioAlumno;
 import com.desafio.POC.model.formulario.FormularioEmpresa;
 import com.desafio.POC.repository.FormularioRepository;
+import com.desafio.POC.repository.OfertaLaboralRepository;
 import com.desafio.POC.service.FormularioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.List;
 public class FormularioServiceimpl implements FormularioService {
     @Autowired
     FormularioRepository formularioRepository;
+    OfertaLaboralRepository ofertaLaboralRepository;
     @Override
     public void ingresoDeFormularioAlumo(FormularioAlumno formulario) {
         formularioRepository.save(formulario);
@@ -24,9 +26,10 @@ public class FormularioServiceimpl implements FormularioService {
     public void ingresoDeFormularioEmpresa(FormularioEmpresa formulario) {
         formularioRepository.save(formulario);
 
+
     }
 
-    public ArrayList<Formulario> getFormularios(String tipo) {
-        return (ArrayList<Formulario>) formularioRepository.findAllByTipo(tipo);
+    public List<Formulario> getFormularios(String tipo) {
+        return formularioRepository.findAllByTipo(tipo);
     }
 }

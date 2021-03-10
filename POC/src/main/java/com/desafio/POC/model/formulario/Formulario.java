@@ -36,4 +36,8 @@ public  class Formulario implements Serializable {
     public String getTipo() {
         return email;
     }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }

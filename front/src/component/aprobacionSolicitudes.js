@@ -22,7 +22,7 @@ async componentDidMount () {
  const response = await axios.get("https://localhost:8080/formularioAlumno")
     console.log(response)
     this.setState({
-      paraAprobar: response.data.provincias
+      paraAprobar: response.data
 
     })
 

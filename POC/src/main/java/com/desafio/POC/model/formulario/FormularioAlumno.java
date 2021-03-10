@@ -8,12 +8,12 @@ import java.io.Serializable;
 
 public class FormularioAlumno extends Formulario implements Serializable {
 
-    private String nombre;
     private String apellido;
     private String tipoDni;
     private int dni;
     private String carrera;
     private int año;
+    private String experiencia;
 
 
     public String getApellido() {
@@ -47,5 +47,9 @@ public class FormularioAlumno extends Formulario implements Serializable {
     public FormularioAlumno(){
         super();
 
+    }
+
+    public String getExperiencia() {
+        return experiencia;
     }
 }

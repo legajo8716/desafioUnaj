@@ -23,7 +23,6 @@ ofertasLaborales:[],
 insertar:false,
 cantidadDeOfertas:0
 }
-
 }
 
   handleChange(event) {
@@ -54,8 +53,6 @@ response.then(
 
 agregarOferta(condicion){
 this.setState({insertar:condicion})
-
-
 }
 
 
@@ -64,7 +61,7 @@ this.setState({insertar:condicion})
             console.log("envie")
             const formulario=this.state.provinciaSeleccionada
             console.log(this.state.provinciaSeleccionada)
-        e.preventDefault()
+            e.preventDefault()
 
 
             const header={
@@ -72,8 +69,21 @@ this.setState({insertar:condicion})
                 'X-Requested-With': 'XMLHttpRequest'
             }
 
-        axios.post('http://localhost:8080/formulario',
-                    {"nombre":"nelsiton", "email":"pepi"},header)
+
+
+
+        axios.post('http://localhost:8080/formularioEmpresa',
+                    {
+                        nombre:this.state.provinciaSeleccionada.nombre,
+                        cuit:this.state.provinciaSeleccionada.cuit,
+                        provincia:this.state.provinciaSeleccionada.provincia,
+                        localidad:this.state.provinciaSeleccionada.localidad,
+                        direccion:this.state.provinciaSeleccionada.direccion,
+                        telefono:this.state.provinciaSeleccionada.telefono,
+                        email:this.state.provinciaSeleccionada.email,
+                        ofertas:this.state.ofertasLaborales
+                    }
+                    ,header)
             .then(response =>alert("usuario creado con exito")).catch(error=>{alert("Usuario incorrecto")});
          alert("sumir")
         }
@@ -88,7 +98,12 @@ this.setState({insertar:condicion})
 
 
       }
-
+borrarOferta(numero){
+let ofertas= this.state.ofertasLaborales
+ofertas=ofertas.filter((item)=>item!=numero)
+this.setState({ofertasLaborales:ofertas })
+console.log(this.state.ofertasLaborales)
+}
 
 
     render() {
@@ -97,26 +112,24 @@ this.setState({insertar:condicion})
 
                                         <Form.Group controlId="formBasicEmail">
                                                 <Form.Label>Nombre empresa</Form.Label>
-
                                                 <Form.Control name="nombre" type="text" placeholder="Ingrese el nombre del establecimiento"  onChange={this.handleChange} />
                                         </Form.Group>
 
                                         <Form.Group controlId="formBasicEmail">
                                                 <Form.Label>CUIT</Form.Label>
-                                                <Form.Control type="text" name="cuit" placeholder="Ingrese CUIT de la empresa"  onChange={this.handleChange}/>
+                                                <Form.Control type="number" name="cuit" placeholder="Ingrese CUIT de la empresa"  onChange={this.handleChange}/>
                                         </Form.Group>
 
                                         <Form.Group controlId="exampleForm.ControlSelect1">
-                                            <Form.Label>Provincia</Form.Label>
-
-                                            <Form.Control as="select" onChange={this.seleccionProvincia} name="provincia">
+                                                            <Form.Label>Provincia</Form.Label>
+                                         <Form.Control as="select" onChange={this.seleccionProvincia} name="provincia">
                                               {this.state.provincias.map(provincia=> <option>{provincia.nombre}</option>)}
                                              </Form.Control>
                                           </Form.Group>
 
                                             <Form.Group controlId="exampleForm.ControlSelect1">
                                            <Form.Label>Seleccionar su localidad</Form.Label>
-                                           <Form.Control as="select" name="localidad">
+                                           <Form.Control as="select" name="localidad" onChange={this.handleChange}>
                                                  {this.state.localidades.map(localidad=> <option>{localidad.nombre}</option>)}
                                           </Form.Control>
 
@@ -127,14 +140,14 @@ this.setState({insertar:condicion})
 
                                        <Form.Group controlId="formBasicEmail">
                                                        <Form.Label>Direccion</Form.Label>
-                                                       <Form.Control type="text" placeholder="ingrese su direccion"  onChange={this.handleChange} />
+                                                       <Form.Control type="text" name="direccion" placeholder="ingrese su direccion"  onChange={this.handleChange} />
                                                </Form.Group>
                                           <Form.Group controlId="formBasicEmail">
                                                                                                <Form.Label>Telefono</Form.Label>
-                                                                                               <Form.Control type="text" placeholder="ingrese su direccion"  onChange={this.handleChange} />
+                                                                                               <Form.Control type="number" name="telefono" placeholder="ingrese su Telefono"  onChange={this.handleChange} />
                                                                                        </Form.Group>
                                          <Form.Group controlId="formBasicEmail">
-                                                                                 <Form.Label>Email </Form.Label>
+                                         <Form.Label>Email </Form.Label>
                                                                                  <Form.Control type="text" name="email" placeholder="Ingrese su email"  onChange={this.handleChange}/>
                                                                                </Form.Group>
 
@@ -144,31 +157,26 @@ this.setState({insertar:condicion})
                                          </Button>
 
                                            <div style={{marginTop:"10px"}}>
-                                         <ListaOfertas  lista={this.state.ofertasLaborales}  />
+                                         <ListaOfertas  callback={this.borrarOferta.bind(this)} lista={this.state.ofertasLaborales}  />
                                             </div>
 
                                          <Modal size="lg" show={this.state.insertar}>
-                                        <Modal.Dialog style={{width:"100%",height:"100%"}} >
-                                          <Modal.Header closeButton>
-                                            <Modal.Title>Agrega una oferta</Modal.Title>
-                                          </Modal.Header>
+                                                            <Modal.Dialog style={{width:"100%",height:"100%"}} >
 
-                                          <Modal.Body >
-                                          <OfertaLaboral callback={this.recibirOferta.bind(this)} />
+                                                            <Modal.Header closeButton>
+                                                                <Modal.Title>Agrega una oferta</Modal.Title>
+                                                            </Modal.Header>
 
-                                          </Modal.Body >
-
-
-                                          <Modal.Footer>
-                                            <Button variant="secondary"  onClick={() => this.agregarOferta(false)} >Cerrar</Button>
-
-                                          </Modal.Footer>
-                                        </Modal.Dialog>
-                                        </Modal>
-
-
-                                         <Button variant="secondary" size="lg" block style={{marginTop:"10px"}} >
-                                           Enviar
+                                                              <Modal.Body >
+                                                              <OfertaLaboral callback={this.recibirOferta.bind(this)} />
+                                                              </Modal.Body >
+                                                              <Modal.Footer>
+                                                                <Button variant="secondary"  onClick={() => this.agregarOferta(false)} >Cerrar</Button>
+                                                              </Modal.Footer>
+                                                             </Modal.Dialog>
+                                           </Modal>
+                                        <Button variant="secondary" type="submit" size="lg" block style={{marginTop:"10px"}} >
+                                                   Enviar
                                          </Button>
                                        </>
                                      </Form>

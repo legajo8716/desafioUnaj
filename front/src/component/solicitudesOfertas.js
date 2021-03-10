@@ -4,15 +4,13 @@ import{Form,Button,Col,Table} from 'react-bootstrap'
 
 
 
-export default class ListaOfertas extends React.Component
+export default class SolicitudesOfertas extends React.Component
 {
 constructor(props){
 super(props);
-this.borrar=this.borrar.bind(this)
-            }
+this.state={lista:this.props.lista
 
-borrar(oferta){
-this.props.callback(oferta)
+            }
 }
 
 render(){
@@ -21,25 +19,26 @@ render(){
                     <Table striped bordered hover variant="dark">
                       <thead>
                         <tr>
+
                          <th>#</th>
                           <th>Descripcion del puesto</th>
                           <th>Fecha de inicio</th>
                           <th>Fecha de finalizacion</th>
-                          <th>Borrar</th>
+                          <th>Empresa</th>
                         </tr>
                       </thead>
                       <tbody>
-                     {this.props.lista.map((oferta)=>
+
+                      {
+
+ this.state.lista.map((oferta)=>
                                 <tr>
                                   <td>{oferta.numero}</td>
                                   <td>{oferta.descripcion}</td>
                                   <td >{oferta.fechaInicio}</td>
                                   <td>{oferta.fechaFinalizacion}</td>
-                                  <td>{oferta.fechaFinalizacion}</td>
-                                  <td>
-                                        <Button variant="secondary" size="lg" block onClick={()=>this.borrar(oferta)}>
-                                         Borrar</Button>
-                                  </td>
+                                  <td>{oferta.empresa}</td>
+
                                 </tr>
                                 )
                       }
