@@ -7,33 +7,15 @@ import estudiante from './estudiante.jpg'
 import laboral from './laboral.jpg'
 import oferta from './oferta.jpg'
 import busquedaEstudiante from './busquedaEstudiante.jpg'
-import logo from './logo.png'
+import Navar from'../component/navar'
 
 import './home.css'
 export default class Home extends React.Component{
 render(){ return(
         <div>
 
-          <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="#home">
-                                                 <img
-                                                   src={logo}
-                                                   width="100"
-                                                   height="50"
-                                                   className="d-inline-block align-top"
-                                                   alt="React Bootstrap logo"
-                                                 />
-                                               </Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Ofertas Laborales</Nav.Link>
-              <Nav.Link href="#pricing">Encuentre personal</Nav.Link>
-              <Nav.Link href="#pricing">Contacto</Nav.Link>
 
-            </Nav>
-
-          </Navbar>
-
+            <Navar/>
 
 
             <Card >
@@ -50,7 +32,7 @@ render(){ return(
             </Card>
 
             <CardGroup>
-              <Card className="card">
+              <Card className="card" onClick={()=>this.props.history.push("/formularioEmpresa")}>
                 <Card.Img variant="top" src={empresa} className="images"/>
                 <Card.Body>
                   <Card.Title>¿Tu empresa necesita pesonal?</Card.Title>
@@ -61,7 +43,8 @@ render(){ return(
                 </Card.Body>
 
               </Card>
-              <Card className="card">
+              <Card className="card" onClick={()=>this.props.history.push("/formulario/alumno")
+}>
                 <Card.Img variant="top" src={estudiante}  className="images"/>
                 <Card.Body>
                   <Card.Title>¿Sos estudiante y necesitas trabajo?</Card.Title>
@@ -73,7 +56,7 @@ render(){ return(
                 </Card.Body>
 
               </Card>
-              <Card className="card">
+              <Card className="card" onClick={()=>this.props.history.push("/login")}>
                 <Card.Img variant="top" src={laboral} className="images"/>
                 <Card.Body>
                   <Card.Title>Personal Administrativo</Card.Title>
@@ -86,7 +69,7 @@ render(){ return(
 
               </Card>
             </CardGroup>
-               <Card >
+               <Card onClick={()=>this.props.history.push("/solicitudesAlumnos")} >
                           <Card.Header>Featured</Card.Header>
                           <Card.Body>
                             <Card.Title>Estudiantes para contratar</Card.Title>

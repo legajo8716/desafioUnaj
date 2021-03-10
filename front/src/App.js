@@ -13,6 +13,7 @@ import Register from './view/register';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './view/home';
+import FormularioView from './view/FormularioView';
 
 import{Form,Button,Col} from 'react-bootstrap'
 import $ from 'jquery';
@@ -29,6 +30,8 @@ function App() {
           <Route path="/registro" component={Register} />
           <Route path="/login" component={Login} />
            <Route path="/lista" component={ListaOfertas } lista={data} />
+           <Route path="/formulario/alumno" render={() => <FormularioView lista="alumno"/>} />
+
            <Route path="/solicitudesAlumnos" component={SolicitudesAlumnos }  />
 
 
