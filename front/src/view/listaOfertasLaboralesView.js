@@ -1,7 +1,7 @@
 import React from 'react'
 import Navar from'../component/navar'
 import{Card,CardGroup} from 'react-bootstrap'
-import ListaDeOfertas from '../component/listaOfertas';
+import ListaDeOfertas from '../component/listas/listaOfertas';
 
 import Login from '../component/login';
 
@@ -18,7 +18,7 @@ render(){ return(
         <Card>
           <Card.Header as="h5">Ofertas</Card.Header>
           <Card.Body>
-          <SolicitudesOfertas />
+          <ListaDeOfertas />
        </Card.Body>
         </Card>
 

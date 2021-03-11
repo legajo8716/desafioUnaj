@@ -3,7 +3,7 @@ import{Form,Button,Col,Modal} from 'react-bootstrap'
 import apiGeo from '../api/apiGeo.js'
 import axios from 'axios';
 import OfertaLaboral from './formularioOfertaLaboral'
-import ListaOfertas from './listaDeOfertas'
+import ListaOfertas from './listas/listaDeOfertas'
 
 
 export default class FormularioEmpresa extends React.Component

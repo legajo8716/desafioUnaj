@@ -1,8 +1,7 @@
 import React from 'react'
 import Navar from'../component/navar'
 import{Card,CardGroup} from 'react-bootstrap'
-import ListaAlumnos from '../component/listaAlumnos';
-
+import ListaAlumnos from '../component/listas/listaAlumnos';
 import Login from '../component/login';
 
 
