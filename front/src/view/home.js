@@ -32,7 +32,7 @@ render(){ return(
             </Card>
 
             <CardGroup>
-              <Card className="card" onClick={()=>this.props.history.push("/formularioEmpresa")}>
+              <Card className="card" onClick={()=>this.props.history.push("/formulario/empresa")}>
                 <Card.Img variant="top" src={empresa} className="images"/>
                 <Card.Body>
                   <Card.Title>¿Tu empresa necesita pesonal?</Card.Title>
@@ -69,7 +69,7 @@ render(){ return(
 
               </Card>
             </CardGroup>
-               <Card onClick={()=>this.props.history.push("/solicitudesAlumnos")} >
+               <Card onClick={()=>this.props.history.push("/solicitudes/Alumnos")} >
                           <Card.Header>Featured</Card.Header>
                           <Card.Body>
                             <Card.Title>Estudiantes para contratar</Card.Title>

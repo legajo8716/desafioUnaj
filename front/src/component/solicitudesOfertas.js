@@ -12,7 +12,12 @@ this.state={lista:this.props.lista
 
             }
 }
+async componentDidMount () {
 
+    const response = await axios.get("http://localhost:8080/formulariosEmpresa")
+    this.setState({lista:(response.data)})
+
+  }
 render(){
     return(
             <div>

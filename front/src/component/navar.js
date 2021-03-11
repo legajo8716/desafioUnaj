@@ -18,9 +18,8 @@ render(){ return(
                                                  />
                                                </Navbar.Brand>
             <Nav className="mr-auto">
-
-              <Nav.Link href="/formularioAlumno">Ofertas Laborales</Nav.Link>
-              <Nav.Link href="#pricing">Encuentre personal</Nav.Link>
+              <Nav.Link href="#ofertas">Ofertas Laborales</Nav.Link>
+              <Nav.Link href="/solicitudes/Alumnos">Encuentre personal</Nav.Link>
               <Nav.Link href="#pricing">Contacto</Nav.Link>
 
             </Nav>

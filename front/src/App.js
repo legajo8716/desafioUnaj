@@ -4,11 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FormularioAlumno from './component/formularioAlumno';
 import FormularioEmpresa from './component/formularioEmpresa';
 import AprobacionSolicitudes from './component/aprobacionSolicitudes';
-import SolicitudesAlumnos from './component/solicitudesAlumnos';
+import SolicitudesAlumnosView from './view/solicitudesAlumnosView';
 
 import ListaOfertas from './component/listaDeOfertas';
-import Login from './view/login';
-import Register from './view/register';
+import LoginView from './view/loginView';
+import RegisterView from './view/registerView';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -27,12 +27,13 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/formularioAlumno" component={FormularioAlumno} />
           <Route path="/formularioEmpresa" component={FormularioEmpresa} />
-          <Route path="/registro" component={Register} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" component={LoginView} />
            <Route path="/lista" component={ListaOfertas } lista={data} />
            <Route path="/formulario/alumno" render={() => <FormularioView lista="alumno"/>} />
+           <Route path="/formulario/empresa" render={() => <FormularioView lista="empresa"/>} />
+           <Route path="/registro" component={RegisterView }  />
 
-           <Route path="/solicitudesAlumnos" component={SolicitudesAlumnos }  />
+           <Route path="/solicitudes/Alumnos" component={SolicitudesAlumnosView }  />
 
 
 

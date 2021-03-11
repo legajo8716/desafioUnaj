@@ -82,10 +82,7 @@ render(){
                                                   </p>
                                                 </Modal.Body>
                                               </Modal>              </td>
-                                <td>  <Button variant="success" size="lg" block>
-                                                          Aprobar
-                                                       </Button>
-                                                                                                        </td>
+
                                 </tr>
                                 )
                       }
