@@ -20,7 +20,7 @@ render(){ return(
             <Nav className="mr-auto">
               <Nav.Link href="/solicitudes/Ofertas">Ofertas Laborales</Nav.Link>
               <Nav.Link href="/solicitudes/Alumnos">Encuentre personal</Nav.Link>
-              <Nav.Link href="#pricing">Contacto</Nav.Link>
+              <Nav.Link href="www.linkedin.com/in/nelson-gonzalez-98a29b182">Contacto</Nav.Link>
 
             </Nav>
 
