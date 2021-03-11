@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormularioAlumno from './component/formularioAlumno';
@@ -8,7 +7,7 @@ import ListaDeOfertasView from './view/listaOfertasLaboralesView';
 import LoginView from './view/loginView';
 import RegisterView from './view/registerView';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './view/home';
+import HomeView from './view/homeView';
 import FormularioView from './view/FormularioView';
 import{Form,Button,Col} from 'react-bootstrap'
 import $ from 'jquery';
@@ -19,7 +18,7 @@ function App() {
   return (
     <BrowserRouter>
      <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomeView} />
           <Route path="/formularioAlumno" component={FormularioAlumno} />
           <Route path="/formularioEmpresa" component={FormularioEmpresa} />
           <Route path="/login" component={LoginView} />
@@ -28,9 +27,6 @@ function App() {
            <Route path="/registro" component={RegisterView }  />
            <Route path="/solicitudes/Alumnos" component={ListaDeAlumnosView }  />
            <Route path="/solicitudes/Ofertas" component={ListaDeOfertasView }  />
-
-
-
         </Switch>
         </BrowserRouter>
   );
