@@ -1,15 +1,11 @@
 import React from 'react'
 import Navar from'../component/navar'
 import{Card,CardGroup} from 'react-bootstrap'
-import SolicitudesAlumnos from '../component/solicitudesAlumnos';
+import ListaDeOfertas from '../component/listaOfertas';
 
 import Login from '../component/login';
 
-
-
-
-
-export default class SolicitudesAlumnosView extends React.Component{
+export default class ListaDeOfertasView extends React.Component{
 constructor(props){
 super(props)
 
@@ -20,9 +16,9 @@ render(){ return(
  <div>
              <Navar/>
         <Card>
-          <Card.Header as="h5">Alumnos</Card.Header>
+          <Card.Header as="h5">Ofertas</Card.Header>
           <Card.Body>
-          <SolicitudesAlumnos />
+          <SolicitudesOfertas />
        </Card.Body>
         </Card>
 

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-export default class SolicitudesAlumnos extends React.Component
+export default class ListaAlumnos extends React.Component
 {
 constructor(props){
 super(props);
