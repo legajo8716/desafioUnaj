@@ -18,7 +18,7 @@ this.state={
 }
 async componentDidMount () {
 
-    const response = await axios.get("http://localhost:8080/formulariosAlumnos")
+    const response = await axios.get("http://localhost:8080/alumnos")
     this.setState({lista:(response.data)})
 
   }

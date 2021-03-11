@@ -5,16 +5,13 @@ import FormularioAlumno from './component/formularioAlumno';
 import FormularioEmpresa from './component/formularioEmpresa';
 import AprobacionSolicitudes from './component/aprobacionSolicitudes';
 import SolicitudesAlumnosView from './view/solicitudesAlumnosView';
-
+import SolicitudesOfertasView from './view/solicitudesOfertasView';
 import ListaOfertas from './component/listaDeOfertas';
 import LoginView from './view/loginView';
 import RegisterView from './view/registerView';
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
 import Home from './view/home';
 import FormularioView from './view/FormularioView';
-
 import{Form,Button,Col} from 'react-bootstrap'
 import $ from 'jquery';
 import Popper from 'popper.js';
@@ -32,8 +29,8 @@ function App() {
            <Route path="/formulario/alumno" render={() => <FormularioView lista="alumno"/>} />
            <Route path="/formulario/empresa" render={() => <FormularioView lista="empresa"/>} />
            <Route path="/registro" component={RegisterView }  />
-
            <Route path="/solicitudes/Alumnos" component={SolicitudesAlumnosView }  />
+           <Route path="/solicitudes/Ofertas" component={SolicitudesOfertasView }  />
 
 
 

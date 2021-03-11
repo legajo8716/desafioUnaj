@@ -57,5 +57,17 @@ public class Alumno{
         public String getExperiencia() {
             return experiencia;
         }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
 

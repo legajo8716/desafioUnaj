@@ -18,7 +18,7 @@ render(){ return(
             <Navar/>
 
 
-            <Card >
+            <Card onClick={()=>this.props.history.push("/solicitudes/Ofertas")}>
 
               <Card.Body>
                 <Card.Title>Ofertas laborales</Card.Title>

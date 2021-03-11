@@ -1,5 +1,7 @@
 package com.desafio.POC.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 @Entity
@@ -9,7 +11,9 @@ public class OfertaLaboral {
    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String descripcion;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date fechaInicio;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date fechaFinalizacion;
     @ManyToOne()
     @JoinColumn(name="empresa", referencedColumnName = "id", insertable = false, updatable = false)
@@ -27,5 +31,21 @@ public class OfertaLaboral {
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public Date getFechaFinalizacion() {
+        return fechaFinalizacion;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public int getId() {
+        return id;
     }
 }
