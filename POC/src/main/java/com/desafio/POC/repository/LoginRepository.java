@@ -1,4 +1,11 @@
 package com.desafio.POC.repository;
 
-public interface LoginRepository {
+import com.desafio.POC.model.OfertaLaboral;
+import com.desafio.POC.model.usuario.Usuario;
+import org.springframework.data.repository.CrudRepository;
+
+public interface LoginRepository extends CrudRepository<Usuario, Long> {
+
+
+    Usuario findAllByNombreUsuario(String nombreDeUsuario);
 }
