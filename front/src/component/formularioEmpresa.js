@@ -58,7 +58,6 @@ this.setState({insertar:condicion})
 
      handleSubmit (e) {
 
-            console.log("envie")
             const formulario=this.state.provinciaSeleccionada
             console.log(this.state.provinciaSeleccionada)
             e.preventDefault()
@@ -79,15 +78,15 @@ this.setState({insertar:condicion})
                         provincia:this.state.provinciaSeleccionada.provincia,
                         localidad:this.state.provinciaSeleccionada.localidad,
                         direccion:this.state.provinciaSeleccionada.direccion,
-                        telefono:this.state.provinciaSeleccionada.telefono,
+
+               telefono:this.state.provinciaSeleccionada.telefono,
                         email:this.state.provinciaSeleccionada.email,
                         ofertas:this.state.ofertasLaborales
                     }
                     ,header)
-            .then(response =>alert("usuario creado con exito")).catch(error=>{alert("Usuario incorrecto")});
-         alert("sumir")
-        }
+            .then(response =>alert("Formulario enviado")).catch(error=>{alert("Error")});
 
+        }
       recibirOferta(oferta){
  const list=Object.assign(this.state.ofertasLaborales,{[this.state.cantidadDeOfertas +1]:{"numero":this.state.cantidadDeOfertas,"descripcion" : oferta.descripcion,
                                                         "fechaInicio":oferta.fechaInicio,
