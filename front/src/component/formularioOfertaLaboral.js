@@ -9,7 +9,8 @@ super(props)
 this.state={
 descripcion:"",
 fechaInicio:"",
-fechaFinalizacion:""
+fechaFinalizacion:"",
+tipo:"oferta"
 
 }
 this.handleChange = this.handleChange.bind(this);

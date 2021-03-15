@@ -31,8 +31,8 @@ constructor(props){
 
          axios.post('http://localhost:8080/formularioAlumno',
                      this.state,header)
-             .then(response =>alert("usuario creado con exito")).catch(error=>{alert("Usuario incorrecto")});
-          alert("sumir")
+             .then(response =>alert("formulario enviado")).catch(error=>{alert("error")});
+
          }
 
 

@@ -30,9 +30,7 @@ function App() {
            <Route path="/solicitudes/Alumnos" component={ListaDeAlumnosView }  />
            <Route path="/solicitudes/Ofertas" component={ListaDeOfertasView }  />
            <Route path="/aprobacion/solicitudes" component={AprobacionSolicitudesView }  />
-           <Route path="/prueba" render={() => <Lista  numbers ={ ["nombre", "apellido", "dni"]}
-                                                          datos={[{"nombre":"pepe","apellido":"josefo","dni":"fernandez"},{"nombre":"lulu","apellido":"menea","dni":"lapatita"}  ]
-                                                          }/> }  />
+
 
         </Switch>
         </BrowserRouter>

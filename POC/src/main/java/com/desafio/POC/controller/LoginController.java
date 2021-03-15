@@ -18,8 +18,9 @@ public class LoginController {
     @CrossOrigin
     @RequestMapping(method = {RequestMethod.POST}, value = {"/register"})
     @ResponseBody
-    public ResponseEntity registrarNuevoUsuario(@RequestBody Usuario usuario) {
-        return loginService.registrar(usuario);
+    public String registrarNuevoUsuario(@RequestBody Usuario usuario) {
+        loginService.registrar(usuario);
+        return "registrado";
     }
 
     @CrossOrigin

@@ -13,7 +13,7 @@ render(){
 <Card>
           <Card.Header as="h5">Registrate</Card.Header>
           <Card.Body>
-            <Register/>
+            <Register history={this.props.history}/>
 
         </Card.Body>
                 </Card>

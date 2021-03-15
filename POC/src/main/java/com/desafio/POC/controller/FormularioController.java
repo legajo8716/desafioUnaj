@@ -4,6 +4,7 @@ import com.desafio.POC.model.Alumno;
 import com.desafio.POC.model.formulario.Formulario;
 import com.desafio.POC.model.formulario.FormularioAlumno;
 import com.desafio.POC.model.formulario.FormularioEmpresa;
+import com.desafio.POC.model.formulario.FormularioOferta;
 import com.desafio.POC.repository.FormularioRepository;
 import com.desafio.POC.service.FormularioService;
 import com.desafio.POC.service.impl.FormularioServiceimpl;
@@ -52,6 +53,14 @@ public class FormularioController {
     public List<Formulario> getFormulariosEmpresa() {
         return formularioService.getFormularios("empresa");
     }
+    @CrossOrigin
+    @RequestMapping(method = {RequestMethod.GET}, value = {"/formulariosOferta"})
+    @ResponseBody
+    public List<Formulario> getFormulariosOferta() {
+        return formularioService.getFormularios("oferta");
+    }
+
+
 
 
 

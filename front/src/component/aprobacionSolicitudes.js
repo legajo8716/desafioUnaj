@@ -20,7 +20,7 @@ async componentDidMount () {
  const responseAlumno = await axios.get("http://localhost:8080/formulariosAlumnos")
  this.setState({ paraAprobarAlumno: (responseAlumno.data)})
 
-     const responseEmpresa = await axios.get("http://localhost:8080/ofertas")
+     const responseEmpresa = await axios.get("http://localhost:8080/formulariosOferta")
         this.setState({ paraAprobarEmpresa: (responseEmpresa.data)})
         console.log(responseEmpresa.data)
     }

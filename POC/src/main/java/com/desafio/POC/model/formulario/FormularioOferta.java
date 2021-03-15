@@ -9,10 +9,8 @@ import java.util.Date;
 
 @Entity
 @Table(name="formulario_oferta_laboral")
-public class FormularioOferta {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+public class FormularioOferta extends Formulario{
+
     private String descripcion;
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date fechaInicio;
@@ -22,7 +20,13 @@ public class FormularioOferta {
     @JoinColumn(name="formularioEmpresa", referencedColumnName = "id")
     private FormularioEmpresa formularioEmpresa;
 
-    public FormularioOferta(String descripcion, Date fechaInicio, Date fechaFinalizacion) {
+    @Override
+    public String getTipo() {
+        return tipo;
+    }
+
+    private String tipo;
+    public FormularioOferta(String tipo,String descripcion, Date fechaInicio, Date fechaFinalizacion) {
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;
         this.fechaFinalizacion = fechaFinalizacion;
@@ -35,9 +39,7 @@ public class FormularioOferta {
         return descripcion;
     }
 
-    public int getId() {
-        return id;
-    }
+
 
     public Date getFechaInicio() {
         return fechaInicio;

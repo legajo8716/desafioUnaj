@@ -13,7 +13,6 @@ public  class Formulario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NaturalId
 
     private String nombre;
     private String email;
