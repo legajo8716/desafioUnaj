@@ -16,17 +16,17 @@ registrarte(){
 
 login(event){
      event.preventDefault()
-
+        console.log(this.state)
 
                 const header={
                     'Content-Type': 'application/json',
                     'X-Requested-With': 'XMLHttpRequest'
                 }
 
-   axios.get('http://localhost:8080/formularioEmpresa',
+   axios.post('http://localhost:8080/login',
                     this.state
                     ,header)
-            .then(response =>alert("usuario creado con exito")).catch(error=>{alert("Usuario incorrecto")});
+            .then(response =>this.props.history.push("/aprobacion/solicitudes")).catch(error=>{alert("Usuario incorrecto")});
 
 
 }
@@ -40,7 +40,7 @@ render(){
         <Form onSubmit={this.login}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email </Form.Label>
-            <Form.Control placeholder="Ingrese su email" onChange={this.onChange}/>
+            <Form.Control placeholder="Ingrese su email" name="nombreUsuario" onChange={this.onChange}/>
             <Form.Text className="text-muted">
               Nunca revele su contraseña
             </Form.Text>
@@ -48,7 +48,7 @@ render(){
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" placeholder="Ingrese su contraseña" onChange={this.onChange}/>
+            <Form.Control type="password" placeholder="Ingrese su contraseña"  name="contraseña" onChange={this.onChange}/>
           </Form.Group>
 
           <>

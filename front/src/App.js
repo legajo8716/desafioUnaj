@@ -4,6 +4,8 @@ import FormularioAlumno from './component/formularioAlumno';
 import FormularioEmpresa from './component/formularioEmpresa';
 import ListaDeAlumnosView from './view/listaDeAlumnosView';
 import ListaDeOfertasView from './view/listaOfertasLaboralesView';
+import AprobacionSolicitudesView from './view/aprobacionSolicitudesView';
+import Lista from './component/lista'
 import LoginView from './view/loginView';
 import RegisterView from './view/registerView';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -14,7 +16,7 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 
 function App() {
-  var data=[{descripcion:"pillo",fechaInicio:"hoy",fechaFinalizacion:"mañana"}]
+  var data={"nombre":"nelson","apellido":"gonzalez" }
   return (
     <BrowserRouter>
      <Switch>
@@ -27,6 +29,11 @@ function App() {
            <Route path="/registro" component={RegisterView }  />
            <Route path="/solicitudes/Alumnos" component={ListaDeAlumnosView }  />
            <Route path="/solicitudes/Ofertas" component={ListaDeOfertasView }  />
+           <Route path="/aprobacion/solicitudes" component={AprobacionSolicitudesView }  />
+           <Route path="/prueba" render={() => <Lista  numbers ={ ["nombre", "apellido", "dni"]}
+                                                          datos={[{"nombre":"pepe","apellido":"josefo","dni":"fernandez"},{"nombre":"lulu","apellido":"menea","dni":"lapatita"}  ]
+                                                          }/> }  />
+
         </Switch>
         </BrowserRouter>
   );

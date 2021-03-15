@@ -1,5 +1,7 @@
 package com.desafio.POC.model.formulario;
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,6 +13,8 @@ public  class Formulario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NaturalId
+
     private String nombre;
     private String email;
     private String tipo;

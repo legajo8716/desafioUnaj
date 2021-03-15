@@ -19,9 +19,8 @@ public class FormularioOferta {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date fechaFinalizacion;
     @ManyToOne()
-    @JoinColumn(name="formulario_empresa", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name="formularioEmpresa", referencedColumnName = "id")
     private FormularioEmpresa formularioEmpresa;
-
 
     public FormularioOferta(String descripcion, Date fechaInicio, Date fechaFinalizacion) {
         this.descripcion = descripcion;

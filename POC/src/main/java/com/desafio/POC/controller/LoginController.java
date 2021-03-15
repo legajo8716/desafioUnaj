@@ -23,7 +23,7 @@ public class LoginController {
     }
 
     @CrossOrigin
-    @RequestMapping(method = {RequestMethod.GET}, value = {"/login"})
+    @RequestMapping(method = {RequestMethod.POST}, value = {"/login"})
     @ResponseBody
     public ResponseEntity loginUser(@RequestBody Usuario usuario) {
         Boolean valid = loginService.validarDatos(usuario.getNombreUsuario(), usuario.getContraseña());

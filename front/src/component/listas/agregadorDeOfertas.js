@@ -4,7 +4,7 @@ import{Form,Button,Col,Table} from 'react-bootstrap'
 
 
 
-export default class ListaOfertas extends React.Component
+export default class AgregadorDeOfertas extends React.Component
 {
 constructor(props){
 super(props);

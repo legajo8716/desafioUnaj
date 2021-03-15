@@ -3,7 +3,7 @@ import{Form,Button,Col,Modal} from 'react-bootstrap'
 import apiGeo from '../api/apiGeo.js'
 import axios from 'axios';
 import OfertaLaboral from './formularioOfertaLaboral'
-import ListaOfertas from './listas/listaDeOfertas'
+import AgregadorDeOfertas from './listas/agregadorDeOfertas'
 
 
 export default class FormularioEmpresa extends React.Component
@@ -88,6 +88,7 @@ this.setState({insertar:condicion})
 
         }
       recibirOferta(oferta){
+
  const list=Object.assign(this.state.ofertasLaborales,{[this.state.cantidadDeOfertas +1]:{"numero":this.state.cantidadDeOfertas,"descripcion" : oferta.descripcion,
                                                         "fechaInicio":oferta.fechaInicio,
                                                         "fechaFinalizacion":oferta.fechaFinalizacion,
@@ -156,7 +157,7 @@ console.log(this.state.ofertasLaborales)
                                          </Button>
 
                                            <div style={{marginTop:"10px"}}>
-                                         <ListaOfertas  callback={this.borrarOferta.bind(this)} lista={this.state.ofertasLaborales}  />
+                                         <AgregadorDeOfertas  callback={this.borrarOferta.bind(this)} lista={this.state.ofertasLaborales}  />
                                             </div>
 
                                          <Modal size="lg" show={this.state.insertar}>
@@ -166,7 +167,7 @@ console.log(this.state.ofertasLaborales)
                                                                 <Modal.Title>Agrega una oferta</Modal.Title>
                                                             </Modal.Header>
 
-                                                              <Modal.Body >
+                                                            <Modal.Body>
                                                               <OfertaLaboral callback={this.recibirOferta.bind(this)} />
                                                               </Modal.Body >
                                                               <Modal.Footer>
