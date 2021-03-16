@@ -23,14 +23,28 @@ async componentDidMount () {
      const responseEmpresa = await axios.get("http://localhost:8080/formulariosOferta")
         this.setState({ paraAprobarEmpresa: (responseEmpresa.data)})
     }
+borrarAlumno(itemDeleted){
+let datosUpdate= this.state.paraAprobarAlumno
+console.log(itemDeleted)
+console.log(datosUpdate)
+datosUpdate=datosUpdate.filter((item)=>item.id!=itemDeleted.id)
+this.setState({paraAprobarAlumno:datosUpdate })
+console.log(this.state.paraAprobarAlumno)
 
+}
+borrarOferta(itemDeleted){
+let datosUpdate= this.state.paraAprobarEmpresa
+datosUpdate=datosUpdate.filter((item)=>item.id!=itemDeleted.id)
+this.setState({paraAprobarEmpresa:datosUpdate })
+
+}
 
 render(){
 return( <div>
             <h2>Alumnos</h2>
-           <Lista numbers={["nombre","apellido", "tipoDni","dni","carrera","año","experiencia"]} datos={this.state.paraAprobarAlumno}/>
+           <Lista numbers={["nombre","apellido", "tipoDni","dni","carrera","año","experiencia"]} datos={this.state.paraAprobarAlumno} callback={this.borrarAlumno.bind(this)}/>
             <h2>Ofertas Laborales</h2>
-           <Lista numbers={["descripcion","fechaInicio","fechaFinalizacion"]} datos={this.state.paraAprobarEmpresa}/>
+           <Lista numbers={["descripcion","fechaInicio","fechaFinalizacion"]} datos={this.state.paraAprobarEmpresa} callback={this.borrarOferta.bind(this)}/>
         </div>
 
 )

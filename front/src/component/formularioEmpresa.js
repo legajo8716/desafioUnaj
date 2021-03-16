@@ -106,7 +106,6 @@ borrarOferta(numero){
 let ofertas= this.state.ofertasLaborales
 ofertas=ofertas.filter((item)=>item!=numero)
 this.setState({ofertasLaborales:ofertas })
-console.log(this.state.ofertasLaborales)
 }
 
 
