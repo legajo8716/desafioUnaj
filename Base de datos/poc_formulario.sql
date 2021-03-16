@@ -16,34 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `formulario`
---
-
-DROP TABLE IF EXISTS `formulario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `formulario` (
-  `dtype` varchar(31) NOT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) DEFAULT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `tipo` varchar(255) DEFAULT NULL,
-  `apellido` varchar(255) DEFAULT NULL,
-  `año` int DEFAULT NULL,
-  `carrera` varchar(255) DEFAULT NULL,
-  `dni` int DEFAULT NULL,
-  `experiencia` varchar(255) DEFAULT NULL,
-  `tipo_dni` varchar(255) DEFAULT NULL,
-  `cuit` int DEFAULT NULL,
-  `direccion` varchar(255) DEFAULT NULL,
-  `localidad` varchar(255) DEFAULT NULL,
-  `provincia` varchar(255) DEFAULT NULL,
-  `telefono` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `formulario`
 --
 
@@ -61,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 22:20:38
+-- Dump completed on 2021-03-15 23:35:40

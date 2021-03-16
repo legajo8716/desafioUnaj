@@ -16,33 +16,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `alumno`
---
-
-DROP TABLE IF EXISTS `alumno`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `alumno` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `apellido` varchar(255) DEFAULT NULL,
-  `año` int NOT NULL,
-  `carrera` varchar(255) DEFAULT NULL,
-  `dni` int NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `experiencia` varchar(255) DEFAULT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `tipo_dni` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `alumno`
 --
 
 LOCK TABLES `alumno` WRITE;
 /*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
-INSERT INTO `alumno` VALUES (1,'gonzalez',2019,'tecnicatura en programacion',38298089,'nelgonzalez88@gmail.com','Tengo muchas de empezar ','nelson','DNI');
 /*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 22:20:38
+-- Dump completed on 2021-03-15 23:35:41

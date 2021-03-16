@@ -16,31 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `formulario_oferta_laboral`
+-- Dumping data for table `usuario`
 --
 
-DROP TABLE IF EXISTS `formulario_oferta_laboral`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `formulario_oferta_laboral` (
-  `id` int NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL,
-  `fecha_finalizacion` datetime(6) DEFAULT NULL,
-  `fecha_inicio` datetime(6) DEFAULT NULL,
-  `formulario_empresa` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK5h53u5w5sa50g5e0ujuhw0b7f` (`formulario_empresa`),
-  CONSTRAINT `FK5h53u5w5sa50g5e0ujuhw0b7f` FOREIGN KEY (`formulario_empresa`) REFERENCES `formulario` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `formulario_oferta_laboral`
---
-
-LOCK TABLES `formulario_oferta_laboral` WRITE;
-/*!40000 ALTER TABLE `formulario_oferta_laboral` DISABLE KEYS */;
-/*!40000 ALTER TABLE `formulario_oferta_laboral` ENABLE KEYS */;
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 22:20:38
+-- Dump completed on 2021-03-15 23:35:40

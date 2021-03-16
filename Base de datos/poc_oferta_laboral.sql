@@ -16,31 +16,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `oferta_laboral`
---
-
-DROP TABLE IF EXISTS `oferta_laboral`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `oferta_laboral` (
-  `id` int NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL,
-  `fecha_finalizacion` datetime(6) DEFAULT NULL,
-  `fecha_inicio` datetime(6) DEFAULT NULL,
-  `empresa` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FKp1ivfk9yaq3rila487i7ywsjg` (`empresa`),
-  CONSTRAINT `FKp1ivfk9yaq3rila487i7ywsjg` FOREIGN KEY (`empresa`) REFERENCES `empresa` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `oferta_laboral`
 --
 
 LOCK TABLES `oferta_laboral` WRITE;
 /*!40000 ALTER TABLE `oferta_laboral` DISABLE KEYS */;
-INSERT INTO `oferta_laboral` VALUES (1,'soy una descripcion','2021-10-05 00:00:00.000000','2021-10-05 00:00:00.000000',NULL),(2,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `oferta_laboral` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 22:20:38
+-- Dump completed on 2021-03-15 23:35:40
