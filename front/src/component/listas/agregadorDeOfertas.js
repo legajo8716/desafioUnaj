@@ -35,7 +35,6 @@ render(){
                                   <td>{oferta.descripcion}</td>
                                   <td >{oferta.fechaInicio}</td>
                                   <td>{oferta.fechaFinalizacion}</td>
-                                  <td>{oferta.fechaFinalizacion}</td>
                                   <td>
                                         <Button variant="secondary" size="lg" block onClick={()=>this.borrar(oferta)}>
                                          Borrar</Button>

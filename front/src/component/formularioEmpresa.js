@@ -59,7 +59,6 @@ this.setState({insertar:condicion})
      handleSubmit (e) {
 
             const formulario=this.state.provinciaSeleccionada
-            console.log(this.state.provinciaSeleccionada)
             e.preventDefault()
 
 
@@ -69,7 +68,7 @@ this.setState({insertar:condicion})
             }
 
 
-
+if(this.state.provinciaSeleccionada.nombre!=null&&this.state.provinciaSeleccionada.cuit!=null&&this.state.provinciaSeleccionada.provincia!=null&&this.state.provinciaSeleccionada.localidad!=null&&this.state.provinciaSeleccionada.direccion!=null&&this.state.provinciaSeleccionada.telefono!=null&&this.state.provinciaSeleccionada.email!=null){
 
         axios.post('http://localhost:8080/formularioEmpresa',
                     {
@@ -79,20 +78,25 @@ this.setState({insertar:condicion})
                         localidad:this.state.provinciaSeleccionada.localidad,
                         direccion:this.state.provinciaSeleccionada.direccion,
 
-               telefono:this.state.provinciaSeleccionada.telefono,
+                        telefono:this.state.provinciaSeleccionada.telefono,
                         email:this.state.provinciaSeleccionada.email,
                         ofertas:this.state.ofertasLaborales
                     }
                     ,header)
             .then(response =>alert("Formulario enviado")).catch(error=>{alert("Error")});
+            }
+            else{
+            alert("Rellene todos los campos")
+            }
 
         }
       recibirOferta(oferta){
 
- const list=Object.assign(this.state.ofertasLaborales,{[this.state.cantidadDeOfertas +1]:{"numero":this.state.cantidadDeOfertas,"descripcion" : oferta.descripcion,
+ const list=this.state.ofertasLaborales
+ list.push({"numero":this.state.cantidadDeOfertas,"descripcion" : oferta.descripcion,
                                                         "fechaInicio":oferta.fechaInicio,
                                                         "fechaFinalizacion":oferta.fechaFinalizacion,
-                                                         }})
+                                                         })
     this.setState({ofertasLaborales:list,cantidadDeOfertas:this.state.cantidadDeOfertas+1,"insertar":false});
     console.log(this.state.ofertasLaborales)
 

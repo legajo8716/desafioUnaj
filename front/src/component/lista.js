@@ -25,18 +25,25 @@ return(
                             {
              this.props.numbers.map(
                                     (number)=>
+
                                     <td>{  this.props.datos.map(
-                                                        (dato)=><tr>{dato[number]}</tr> )
+                                                        (dato)=><tr>{dato[number]}</tr>
+
+                                                                )
 
                                          }
 
-                                          </td>
+                                    </td>
+
 
                                     )
 
                            }
-                                                               <td><tr style={{}}><Button>✔</Button></tr></td>
-                                                               <td><tr><Button>✖</Button></tr></td>
+                           <td> {this.props.datos.map((dato)=><tr><Button>✖</Button></tr>)
+                           } </td>
+                           <td> {this.props.datos.map((dato)=><tr><Button>✖</Button></tr>)
+                                                      } </td>
+
 
 
                         </tbody>

@@ -1,8 +1,10 @@
 package com.desafio.POC.service.impl;
 
+import com.desafio.POC.model.OfertaLaboral;
 import com.desafio.POC.model.formulario.Formulario;
 import com.desafio.POC.model.formulario.FormularioAlumno;
 import com.desafio.POC.model.formulario.FormularioEmpresa;
+import com.desafio.POC.model.formulario.FormularioOferta;
 import com.desafio.POC.repository.FormularioRepository;
 import com.desafio.POC.repository.OfertaLaboralRepository;
 import com.desafio.POC.service.FormularioService;
@@ -16,7 +18,6 @@ import java.util.List;
 public class FormularioServiceimpl implements FormularioService {
     @Autowired
     FormularioRepository formularioRepository;
-    OfertaLaboralRepository ofertaLaboralRepository;
     @Override
     public void ingresoDeFormularioAlumo(FormularioAlumno formulario) {
         formularioRepository.save(formulario);
@@ -25,6 +26,7 @@ public class FormularioServiceimpl implements FormularioService {
     @Override
     public void ingresoDeFormularioEmpresa(FormularioEmpresa formulario) {
         formularioRepository.save(formulario);
+
 
 
     }

@@ -11,4 +11,6 @@ import java.util.List;
     public interface OfertaLaboralRepository extends CrudRepository<OfertaLaboral, Long> {
         OfertaLaboral save(OfertaLaboral oferta);
         List<OfertaLaboral> findAll();
-    }
+
+}
+

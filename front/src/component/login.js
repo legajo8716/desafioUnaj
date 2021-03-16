@@ -16,7 +16,6 @@ registrarte(){
 
 login(event){
      event.preventDefault()
-        console.log(this.state)
 
                 const header={
                     'Content-Type': 'application/json',

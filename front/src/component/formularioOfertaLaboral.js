@@ -22,7 +22,6 @@ handleChange(event) {
     this.setState({[event.target.name] : event.target.value});
   }
 enviar(){
-console.log(this.state)
 this.props.callback(this.state)
 
 }

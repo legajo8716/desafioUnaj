@@ -16,16 +16,14 @@ public class FormularioOferta extends Formulario{
     private Date fechaInicio;
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date fechaFinalizacion;
+
+
     @ManyToOne()
     @JoinColumn(name="formularioEmpresa", referencedColumnName = "id")
     private FormularioEmpresa formularioEmpresa;
 
-    @Override
-    public String getTipo() {
-        return tipo;
-    }
 
-    private String tipo;
+
     public FormularioOferta(String tipo,String descripcion, Date fechaInicio, Date fechaFinalizacion) {
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;

@@ -8,6 +8,7 @@ import com.desafio.POC.model.formulario.FormularioOferta;
 import com.desafio.POC.repository.FormularioRepository;
 import com.desafio.POC.service.FormularioService;
 import com.desafio.POC.service.impl.FormularioServiceimpl;
+import org.hibernate.IdentifierLoadAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,18 @@ public class FormularioController {
     @ResponseBody
     public Formulario ingresoEmpresa( @RequestBody FormularioEmpresa formulario) {
         formulario.setTipo("empresa");
+        List<FormularioOferta>ofertas=formulario.getOfertas();
+
+       for(int i=0;i<ofertas.size();i++){
+           FormularioOferta oferta=ofertas.get(i);
+           oferta.setTipo("oferta");
+           ofertas.set(i,oferta);
+
+
+        }
+        System.out.println(ofertas.get(0).getTipo());
+
+        formulario.setOfertas(ofertas);
         formularioService.ingresoDeFormularioEmpresa(formulario);
 
         return formulario;

@@ -55,4 +55,9 @@ public class FormularioEmpresa extends Formulario {
     public List<FormularioOferta> getOfertas() {
         return ofertas;
     }
+
+
+    public void setOfertas(List<FormularioOferta> ofertas) {
+        this.ofertas = ofertas;
+    }
 }
