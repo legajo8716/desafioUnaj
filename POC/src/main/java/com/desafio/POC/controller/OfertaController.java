@@ -31,11 +31,10 @@ public class OfertaController {
 
 
     @CrossOrigin
-    @RequestMapping(method = {RequestMethod.POST}, value = {"/ingresoOferta"})
+    @RequestMapping(method = {RequestMethod.POST}, value = {"/agregaroferta"})
     @ResponseBody
-    public OfertaLaboral ingresoAlumno( @RequestBody OfertaLaboral oferta) {
+    public void ingresoAlumno( @RequestBody OfertaLaboral oferta) {
         ofertaService.ingresoOferta(oferta);
-        return oferta;
     }
 
 

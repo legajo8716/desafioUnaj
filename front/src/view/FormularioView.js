@@ -23,7 +23,7 @@ render(){ return(
         <Card>
           <Card.Header as="h5">formulario {this.props.lista}</Card.Header>
           <Card.Body>
-{(this.props.lista=="alumno") ? <FormularioAlumno/>:<FormularioEmpresa/>}
+{(this.props.lista=="alumno") ? <FormularioAlumno history={this.props.history}/>:<FormularioEmpresa history={this.props.history}/>}
        </Card.Body>
         </Card>
 

@@ -19,6 +19,7 @@ constructor(props){
   }
    handleSubmit (e) {
 
+              this.props.history.push("/")
 
          e.preventDefault()
 
@@ -31,6 +32,7 @@ constructor(props){
          axios.post('http://localhost:8080/formularioAlumno',
                      this.state,header)
              .then(response =>alert("formulario enviado")).catch(error=>{alert("error")});
+
 
          }
 

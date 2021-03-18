@@ -27,7 +27,7 @@ public class AlumnoController {
         return alumnoService.getAlumnos();
     }
     @CrossOrigin
-    @RequestMapping(method = {RequestMethod.POST}, value = {"/ingresoAlumno"})
+    @RequestMapping(method = {RequestMethod.POST}, value = {"/agregaralumno"})
     @ResponseBody
     public Alumno ingresoAlumno( @RequestBody Alumno alumno) {
         alumnoService.ingresoAlumno(alumno);

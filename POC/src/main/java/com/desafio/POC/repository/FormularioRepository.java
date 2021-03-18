@@ -20,5 +20,5 @@ public interface FormularioRepository<T extends Formulario> extends CrudReposito
     List<Formulario> findAllByTipo(String tipo);
     void save(FormularioEmpresa formularioEmpresa);
     void save(FormularioAlumno formularioEmpresa);
-
+    void delete(Formulario formulario);
 }

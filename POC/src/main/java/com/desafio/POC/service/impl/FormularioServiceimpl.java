@@ -34,4 +34,10 @@ public class FormularioServiceimpl implements FormularioService {
     public List<Formulario> getFormularios(String tipo) {
         return formularioRepository.findAllByTipo(tipo);
     }
+
+    public void borrarFormulario(Formulario formulario) {
+        System.out.println(formulario.getId());
+        this.formularioRepository.deleteById(formulario.getId());
+
+    }
 }

@@ -42,9 +42,9 @@ this.setState({paraAprobarEmpresa:datosUpdate })
 render(){
 return( <div>
             <h2>Alumnos</h2>
-           <Lista numbers={["nombre","apellido", "tipoDni","dni","carrera","año","experiencia"]} datos={this.state.paraAprobarAlumno} callback={this.borrarAlumno.bind(this)}/>
+           <Lista numbers={["nombre","apellido", "tipoDni","dni","carrera","año","experiencia"]} datos={this.state.paraAprobarAlumno} tipo="alumno" callback={this.borrarAlumno.bind(this)}/>
             <h2>Ofertas Laborales</h2>
-           <Lista numbers={["descripcion","fechaInicio","fechaFinalizacion"]} datos={this.state.paraAprobarEmpresa} callback={this.borrarOferta.bind(this)}/>
+           <Lista numbers={["descripcion","fechaInicio","fechaFinalizacion"]} datos={this.state.paraAprobarEmpresa} tipo="oferta" callback={this.borrarOferta.bind(this)}/>
         </div>
 
 )
