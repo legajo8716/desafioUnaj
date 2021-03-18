@@ -17,10 +17,8 @@ const header={  'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
                  }
                 console.log(dato)
-    axios.post("http://localhost:8080/agregar"+this.props.tipo,dato,header).then(
-         response=>alert("aprobado")).catch(alert("error al aprobar"))
-      axios.post("http://localhost:8080/eliminarformulario",dato,header).then(response=>{this.props.callback(dato) }
-                                                                                       ).catch(alert("error al borrar"))
+    axios.post("http://localhost:8080/agregar"+this.props.tipo,dato,header).then(response =>alert("Aprobado")).catch(error=>{alert("Error")})
+      axios.post("http://localhost:8080/eliminarformulario",dato,header)
 
 
 }
@@ -28,7 +26,7 @@ const header={  'Content-Type': 'application/json',
 desaprobar(dato){
  const header={
                    'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
-   axios.post("http://localhost:8080/eliminarformulario",dato,header).then(response=>this.props.callback(dato)).catch(alert("error al borrar"))
+   axios.post("http://localhost:8080/eliminarformulario",dato,header).then(response=>this.props.callback(dato)).catch(error=>{alert("error al borrar")})
 
     }
 

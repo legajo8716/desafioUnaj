@@ -19,7 +19,6 @@ constructor(props){
   }
    handleSubmit (e) {
 
-              this.props.history.push("/")
 
          e.preventDefault()
 
