@@ -17,3 +17,24 @@ Desde una pantalla de administración (implementar algún login mínimo, no se p
 Desde una pantalla pública se podrá listar y buscar los alumnos que buscan trabajo.
 Desde una pantalla pública se podrá listar y buscar las ofertas laborales.
 Deberá tener una página de inicio que lleve a los buscadores y a la carga de los formularios.
+
+
+Se evaluará:
+
+La tecnología seleccionada y el uso de la misma (cuan bien explotada fue la tecnología).
+Patrones implementados y POO.
+Buenas prácticas de desarrollo y codificación.
+Manejo de GIT
+Modelo y normalización de datos.
+Manejo de errores y validaciones.
+Debe tener:
+
+Documentación con los pasos para ser levantado en prueba.* Debe desarrollarse con un framework PHP o JS.
+Debe tener una base relacional PostgreSQL o MySQL
+Los DDL de la base de datos.
+Debe incluirse un set de datos de prueba (no necesitan ser sets completos, sino muestras, EJ: 2 provincias y 4 localidades).
+Debe ser subido a GitHub y compartir el link para su evaluación.
+Suma:
+
+Si el proyecto está Dockerizado suma como conocimientos no excluyente.
+El nivel de manejo de la UI con Bootstrap u otro framework de front.
