@@ -10,7 +10,7 @@ export default class CardHome extends React.Component{
     render(){
         return(
 
-                <Card  onClick={()=>this.props.history.push("/formulario/alumno")}>
+                <Card  onClick={()=>this.props.history.push(this.props.url)}>
                                 <Card.Img variant="top" src={this.props.imagen}  className="images"/>
                                 <Card.Body>
                                   <Card.Title>{this.props.titulo}</Card.Title>

@@ -35,9 +35,9 @@ render(){
             </Card>
             <cardPrincipal titulo="Ofertas laborales" nombreBoton="Encuentre su proximo trabajo" imagen={oferta}/>
            <CardGroup>
-              <CardHome onClick={()=>this.props.history.push("/formulario/empresa")}  titulo={tituloEmpresa} imagen={empresa} texto={textoEmpresa}    /  >
-              <CardHome onClick={()=>this.props.history.push("/formulario/alumno")}  titulo={tituloAlumno} imagen={estudiante} texto={textoAlumno}    /  >
-              <CardHome onClick={()=>this.props.history.push("/login")}  titulo={tituloAdmin} imagen={laboral} texto={textoAlumno}    /  >
+              <CardHome  titulo={tituloEmpresa} imagen={empresa} texto={textoEmpresa} history={this.props.history} url={"/formulario/empresa"}   /  >
+              <CardHome   titulo={tituloAlumno} imagen={estudiante} texto={textoAlumno}  history={this.props.history} url={"/formulario/alumno"}    /  >
+              <CardHome   titulo={tituloAdmin} imagen={laboral} texto={textoAlumno} history={this.props.history}  url={"/login"}   /  >
             </CardGroup>
                <Card onClick={()=>this.props.history.push("/solicitudes/Alumnos")} >
                           <Card.Body>
