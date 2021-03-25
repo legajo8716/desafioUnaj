@@ -1,6 +1,8 @@
 import React from 'react'
 import{Form,Button,Col} from 'react-bootstrap'
 import axios from 'axios';
+import Header from '../utilities/header'
+
 
 
 
@@ -11,32 +13,16 @@ export default class FormularioAlumno extends React.Component
 constructor(props){
     super(props);
     this.handleChange=this.handleChange.bind(this)
-        this.handleSubmit=this.handleSubmit.bind(this)
-
+    this.handleSubmit=this.handleSubmit.bind(this)
     }
  handleChange(event) {
     this.setState({[event.target.name] : event.target.value});
   }
    handleSubmit (e) {
-
-
          e.preventDefault()
-
-
-             const header={
-                 'Content-Type': 'application/json',
-                 'X-Requested-With': 'XMLHttpRequest'
-             }
-
-         axios.post('http://localhost:8080/formularioAlumno',
-                     this.state,header)
+         axios.post('http://localhost:8080/formularioAlumno', this.state,Header)
              .then(response =>alert("formulario enviado")).catch(error=>{alert("error")});
-
-
          }
-
-
-
 
     render() {
     return(<div>

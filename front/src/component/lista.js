@@ -1,6 +1,7 @@
 import React from 'react'
 import{Form,Button,Col,Table,Alert} from 'react-bootstrap'
 import axios from 'axios';
+import Header from '../utilities/header'
 
 export default class AprobacionSolicitudes extends React.Component
 {
@@ -13,20 +14,16 @@ constructor(props){
 
 aprobar(dato){
 
-const header={  'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
-                 }
                 console.log(dato)
-    axios.post("http://localhost:8080/agregar"+this.props.tipo,dato,header).then(response =>alert("Aprobado")).catch(error=>{alert("Error")})
-      axios.post("http://localhost:8080/eliminarformulario",dato,header)
+    axios.post("http://localhost:8080/agregar"+this.props.tipo,dato,Header).then(response =>alert("Aprobado")).catch(error=>{alert("Error")})
+      axios.post("http://localhost:8080/eliminarformulario",dato,Header)
 
 
 }
 
 desaprobar(dato){
- const header={
-                   'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
-   axios.post("http://localhost:8080/eliminarformulario",dato,header).then(response=>this.props.callback(dato)).catch(error=>{alert("error al borrar")})
+
+   axios.post("http://localhost:8080/eliminarformulario",dato,Header).then(response=>this.props.callback(dato)).catch(error=>{alert("error al borrar")})
 
     }
 

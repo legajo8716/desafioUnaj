@@ -13,15 +13,14 @@ super(props)
 
 
 render(){ return(
- <div>
+         <div>
              <Navar/>
-        <Card>
-          <Card.Header as="h5">Ofertas</Card.Header>
-          <Card.Body>
-          <ListaDeOfertas />
-       </Card.Body>
-        </Card>
-
+            <Card>
+                      <Card.Header as="h5">Ofertas</Card.Header>
+                      <Card.Body>
+                      <ListaDeOfertas />
+                   </Card.Body>
+            </Card>
         </div>
         )
         }

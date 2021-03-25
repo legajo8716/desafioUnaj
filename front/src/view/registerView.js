@@ -4,24 +4,18 @@ import Navar from'../component/navar'
 import Register from'../component/register'
 
 export default class RegisterView extends React.Component{
-
 render(){
     return (
     <div>
-
         <Navar/>
-<Card>
+        <Card>
           <Card.Header as="h5">Registrate</Card.Header>
           <Card.Body>
             <Register history={this.props.history}/>
-
         </Card.Body>
-                </Card>
+        </Card>
     </div>
-
     )
-
-
 }
 
 

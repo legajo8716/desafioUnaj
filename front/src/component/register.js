@@ -4,6 +4,8 @@ import React from 'react'
 import{Form,Button,Col,Navbar,Nav,FormControl,Card,CardGroup} from 'react-bootstrap'
 import Navar from'../component/navar'
 import axios from 'axios';
+import Header from '../utilities/header'
+
 
 
 export default class Register extends React.Component{
@@ -19,15 +21,11 @@ register(event){
      event.preventDefault()
 
     if(this.state.contraseña==this.state.contraseña1){
-                const header={
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
 
    axios.post('http://localhost:8080/register',
                     {"nombreUsuario":this.state.nombreUsuario,
                       "contraseña":this.state.contraseña  }
-                    ,header)
+                    ,Header)
             .then(response =>this.props.history.push("/login")).catch("erro");
     }
 else{

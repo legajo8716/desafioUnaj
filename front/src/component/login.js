@@ -1,6 +1,7 @@
 import React from 'react'
 import{Form,Button,Col,Navbar,Nav,FormControl,Card,CardGroup} from 'react-bootstrap'
 import axios from 'axios';
+import Header from '../utilities/header'
 
 export default class Login extends React.Component{
 constructor(props){
@@ -16,18 +17,8 @@ registrarte(){
 
 login(event){
      event.preventDefault()
-
-                const header={
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-
-   axios.post('http://localhost:8080/login',
-                    this.state
-                    ,header)
+    axios.post('http://localhost:8080/login',this.state,Header)
             .then(response =>this.props.history.push("/aprobacion/solicitudes")).catch(error=>{alert("Usuario incorrecto")});
-
-
 }
 onChange(event){
 this.setState({[event.target.name]: event.target.value })

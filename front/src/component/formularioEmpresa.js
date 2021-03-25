@@ -4,6 +4,7 @@ import apiGeo from '../api/apiGeo.js'
 import axios from 'axios';
 import OfertaLaboral from './formularioOfertaLaboral'
 import AgregadorDeOfertas from './listas/agregadorDeOfertas'
+import Header from '../utilities/header'
 
 
 export default class FormularioEmpresa extends React.Component
@@ -62,10 +63,6 @@ this.setState({insertar:condicion})
             e.preventDefault()
 
 
-            const header={
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
-            }
 
 
 if(this.state.provinciaSeleccionada.nombre!=null&&this.state.provinciaSeleccionada.cuit!=null&&this.state.provinciaSeleccionada.provincia!=null&&this.state.provinciaSeleccionada.localidad!=null&&this.state.provinciaSeleccionada.direccion!=null&&this.state.provinciaSeleccionada.telefono!=null&&this.state.provinciaSeleccionada.email!=null){
@@ -82,7 +79,7 @@ if(this.state.provinciaSeleccionada.nombre!=null&&this.state.provinciaSelecciona
                         email:this.state.provinciaSeleccionada.email,
                         ofertas:this.state.ofertasLaborales
                     }
-                    ,header)
+                    ,Header)
             .then(response =>alert("Formulario enviado")).catch(error=>{alert("Error")});
             }
             else{

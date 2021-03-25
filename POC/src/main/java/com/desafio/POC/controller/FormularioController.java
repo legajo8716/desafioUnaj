@@ -35,11 +35,7 @@ public class FormularioController {
            FormularioOferta oferta=ofertas.get(i);
            oferta.setTipo("oferta");
            ofertas.set(i,oferta);
-
-
-        }
-        System.out.println(ofertas.get(0).getTipo());
-
+       }
         formulario.setOfertas(ofertas);
         formularioService.ingresoDeFormularioEmpresa(formulario);
 
