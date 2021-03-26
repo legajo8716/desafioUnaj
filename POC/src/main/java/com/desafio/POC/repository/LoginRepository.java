@@ -8,4 +8,6 @@ public interface LoginRepository extends CrudRepository<Usuario, Long> {
 
 
     Usuario findAllByNombreUsuario(String nombreDeUsuario);
+
+    boolean existsByNombreUsuario(String nombreDeUsuario);
 }

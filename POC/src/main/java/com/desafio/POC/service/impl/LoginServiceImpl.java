@@ -16,23 +16,17 @@ public class LoginServiceImpl implements LoginService {
    public Usuario buscarPorNombre(String nombreDeUsuario ){
        return loginRepository.findAllByNombreUsuario(nombreDeUsuario);
    }
-
+    public Boolean existeUsuario(String nombreDeUsuario){
+      return loginRepository.existsByNombreUsuario(nombreDeUsuario);
+    }
     public Boolean validarDatos(String userName, String pass){
        Usuario usuarioIngresante= this.buscarPorNombre(userName);
 
-        return usuarioIngresante.getNombreUsuario().equals(userName) && usuarioIngresante.getContraseña().equals(pass);
+        return usuarioIngresante.esMiContraseña(pass);
     }
 
-    public ResponseEntity<String> registrar(Usuario usuario){
-       if (this.buscarPorNombre(usuario.getNombreUsuario()) == null) {
-            loginRepository.save(usuario);
-            return ResponseEntity.ok("Registered");
-        } else {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Error");
-        }
-
+    public void save(Usuario usuario) {
+       loginRepository.save(usuario);
     }
-
-
 
 }

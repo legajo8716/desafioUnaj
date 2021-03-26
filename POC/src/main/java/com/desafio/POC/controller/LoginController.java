@@ -18,9 +18,10 @@ public class LoginController {
     @CrossOrigin
     @RequestMapping(method = {RequestMethod.POST}, value = {"/register"})
     @ResponseBody
-    public String registrarNuevoUsuario(@RequestBody Usuario usuario) {
-        loginService.registrar(usuario);
-        return "registrado";
+    public void registrarNuevoUsuario(@RequestBody Usuario usuario) {
+        if (!loginService.existeUsuario(usuario.getNombreUsuario()) ){
+            loginService.save(usuario);
+        }
     }
 
     @CrossOrigin

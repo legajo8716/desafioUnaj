@@ -28,4 +28,8 @@ public class Usuario implements Serializable {
     public int getId() {
         return id;
     }
+
+    public Boolean esMiContraseña(String pass) {
+        return this.getContraseña().equals(pass);
+    }
 }
